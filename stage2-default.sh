@@ -29,7 +29,7 @@
 ##############################################
 
 # Set some variables for this script
-$workingdir=$(PWD)
+workingdir=$PWD
 
 # Get the user's password
 echo "Please enter your user password to continue installation. Type 'fuckoff' to cancel."
