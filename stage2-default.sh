@@ -29,13 +29,13 @@
 ##############################################
 
 # Set some variables for this script
-$workingdir = $(PWD)
+$workingdir=$(PWD)
 
 # Get the user's password
 echo "Please enter your user password to continue installation. Type 'fuckoff' to cancel."
 read $passwd
 
-if $passwd = "fuckoff"; then
+if [[ $passwd "fuckoff" ]]; then
 	exit 1
 fi
 
@@ -88,9 +88,10 @@ cp dotfiles/polybar $HOME/.config
 cp dotfiles/starship.toml $HOME/.config
 echo $passwd | sudo cp dotfiles/ftc.fish /usr/share/doc/find-the-command
 
-# Copy wallpapers
+# Copy wallpapers and create wallpapers folder
 
-find -iname '*.jpg' -exec cp {} $HOME \;
+mkdir $HOME/Wallpapers
+find -iname '*.jpg' -exec cp {} $HOME/Wallpapers \;
 
 # Start services
 
