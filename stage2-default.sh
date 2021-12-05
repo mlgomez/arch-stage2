@@ -28,6 +28,14 @@
 # Initial setup. Let's get the tools we need #
 ##############################################
 
+echo "Your password will be needed to enable and start some services."
+echo "Type your password to continue installation. Type 'fuckoff' to cancel:"
+read -r passwd
+
+if [[ "$passwd" == "fuckoff" ]]; then
+	exit 0
+fi
+
 # Set some variables for this script
 workingdir=$PWD
 
@@ -54,7 +62,7 @@ if [[ ! -d "$HOME/Videos" ]]; then
 fi
 
 # Before running package management, update system
-pacman -Syu --noconfirm
+sudo pacman -Syu --noconfirm
 
 #########################
 # Installing AUR Helper #
@@ -85,11 +93,11 @@ makepkg -si --noconfirm
 #####################
 
 # Grab all the packages needed for graphics
-pacman -S --needed xorg lightdm
-systemctl enable lightdm
+sudo pacman -S --needed xorg sddm
+echo "$passwd" | systemctl enable sddm
 
 # Install i3-gaps and some other tools then copy configs
-pacman -S --needed --noconfirm i3-gaps feh \
+sudo pacman -S --needed --noconfirm i3-gaps feh \
 fish fzf bat starship alacritty easyeffects neofetch \
 picom spectacle dunst polkit-kde-agend xorg-xrandr rofi plocate
 
@@ -115,7 +123,7 @@ cp -r dotfiles/i3 "$HOME/.config"
 cp -r dotfiles/picom "$HOME/.config"
 cp -r dotfiles/polybar "$HOME/.config"
 cp dotfiles/starship.toml "$HOME/.config"
-cp dotfiles/ftc.fish /usr/share/doc/find-the-command
+sudo cp dotfiles/ftc.fish /usr/share/doc/find-the-command
 
 # Copy wallpapers and create wallpapers folder
 mkdir "$HOME/Wallpapers"
@@ -125,4 +133,4 @@ find . -iname '*.jpg' -exec cp {} "$HOME/Wallpapers" \;
 # Start services #
 ##################
 
-systemctl start lightdm
+echo "$passwd" | systemctl start sddm
