@@ -33,7 +33,7 @@ workingdir=$PWD
 
 # Get the user's password
 echo "Please enter your user password to continue installation. Type 'fuckoff' to cancel."
-read -r "${passwd?}"
+read -r passwd
 
 if [[ $passwd == "fuckoff" ]]; then
 	exit 0
