@@ -33,28 +33,28 @@ workingdir=$PWD
 
 # Get the user's password
 echo "Please enter your user password to continue installation. Type 'fuckoff' to cancel."
-read $passwd
+read -r "${passwd?}"
 
 if [[ $passwd == "fuckoff" ]]; then
-	exit 1
+	exit 0
 fi
 
 # Create typical subdirectories for home dir if they don't exist
 
-mkdir $HOME/Downloads
-mkdir $HOME/Documents
-mkdir $HOME/Music
-mkdir $HOME/Pictures
-mkdir $HOME/Videos
+mkdir "$HOME/Downloads"
+mkdir "$HOME/Documents"
+mkdir "$HOME/Music"
+mkdir "$HOME/Pictures"
+mkdir "$HOME/Videos"
 
 # Before running package management, update system
-echo $passwd | sudo pacman -Syu --noconfirm
+echo "$passwd" | sudo pacman -Syu --noconfirm
 
 # Let's install an AUR helper... Switch to home directory always when doing this!!
 
-cd $HOME
+cd "$HOME" || exit 1
 git clone http://aur.archlinux.org/yay.git
-cd yay
+cd "yay" || exit 1
 mkpkg -si --noconfirm
 
 # NOTE: When using yay, attempt to pass --noconfirm just like with pacman
@@ -62,35 +62,35 @@ mkpkg -si --noconfirm
 # Echo $passwd as well so it can skip sudo
 
 # Grab all the packages needed for graphics
-echo $passwd | sudo pacman -S --needed xorg lightdm
-echo $passwd | sudo systemctl enable lightdm
+echo "$passwd" | sudo pacman -S --needed xorg lightdm
+echo "$passwd" | sudo systemctl enable lightdm
 
 # Install i3-gaps and some other tools then copy configs
-echo $passwd | sudo pacman -S --needed --noconfirm i3-gaps feh \
+echo "$passwd" | sudo pacman -S --needed --noconfirm i3-gaps feh \
 fish fzf bat starship alacritty easyeffects neofetch \
 picom spectacle dunst polkit-kde-agend xorg-xrandr rofi plocate
 
 # Install yay pkgs
 
-echo $passwd | yay -S --needed --noconfirm polybar find-the-command \
+echo "$passwd" | yay -S --needed --noconfirm polybar find-the-command \
 
 
 # In case .config does not exist.....
-mkdir $HOME/.config
+mkdir "$HOME/.config"
 
-cd $workingdir
-cp dotfiles/alacritty $HOME/.config
-cp dotfiles/easyeffects $HOME/.config
-cp dotfiles/fish $HOME/.config
-cp dotfiles/i3 $HOME/.config
-cp dotfiles/picom $HOME/.config
-cp dotfiles/polybar $HOME/.config
-cp dotfiles/starship.toml $HOME/.config
-echo $passwd | sudo cp dotfiles/ftc.fish /usr/share/doc/find-the-command
+cd "$workingdir" || exit 1
+cp dotfiles/alacritty "$HOME/.config"
+cp dotfiles/easyeffects "$HOME/.config"
+cp dotfiles/fish "$HOME/.config"
+cp dotfiles/i3 "$HOME/.config"
+cp dotfiles/picom "$HOME/.config"
+cp dotfiles/polybar "$HOME/.config"
+cp dotfiles/starship.toml "$HOME/.config"
+echo "$passwd" | sudo cp dotfiles/ftc.fish /usr/share/doc/find-the-command
 
 # Copy wallpapers and create wallpapers folder
-mkdir $HOME/Wallpapers
-find -iname '*.jpg' -exec cp {} $HOME/Wallpapers \;
+mkdir "$HOME/Wallpapers"
+find . -iname '*.jpg' -exec cp {} "$HOME/Wallpapers" \;
 
 # Start services
 
