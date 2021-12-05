@@ -137,6 +137,7 @@ sudo pacman -S --needed --noconfirm termite
 yay -S --needed --noconfirm polybar
 yay -S --needed --noconfirm find-the-command
 yay -S --needed --noconfirm exa
+yay -S --needed --noconfirm ttf-fantasque-sans-mono
 
 ######################
 # Configuring system #
