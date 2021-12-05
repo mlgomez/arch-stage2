@@ -94,16 +94,16 @@ makepkg -si --noconfirm
 
 # Grab all the packages needed for graphics
 sudo pacman -S --needed xorg sddm
-echo "$passwd" | systemctl enable sddm
+systemctl enable sddm
 
 # Install i3-gaps and some other tools then copy configs
-sudo pacman -S --needed --noconfirm i3-gaps feh \
+sudo pacman -S --needed i3-gaps feh \
 fish fzf bat starship alacritty easyeffects neofetch \
 picom spectacle dunst polkit-kde-agend xorg-xrandr rofi plocate
 
 # Install yay pkgs
 
-yay -S --needed --noconfirm polybar find-the-command exa
+yay -S --needed polybar find-the-command exa
 
 ######################
 # Configuring system #
@@ -133,4 +133,4 @@ find . -iname '*.jpg' -exec cp {} "$HOME/Wallpapers" \;
 # Start services #
 ##################
 
-echo "$passwd" | systemctl start sddm
+systemctl start sddm
