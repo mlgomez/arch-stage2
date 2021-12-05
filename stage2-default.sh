@@ -101,6 +101,9 @@ sudo pacman -S --needed --noconfirm pipewire
 sudo pacman -S --needed --noconfirm wireplumber
 sudo pacman -S --needed --noconfirm pipewire-pulse
 
+# We may need to enable audio services before installing anything else
+systemctl enable --user pipewire wireplumber pipewire-pulse
+
 # Install i3-gaps and some other tools then copy configs
 # I like kate even if it's not super efficient. Sue me.
 sudo pacman -S --needed --noconfirm i3-gaps
@@ -121,6 +124,13 @@ sudo pacman -S --needed --noconfirm dunst
 sudo pacman -S --needed --noconfirm polkit-kde-agent
 sudo pacman -S --needed --noconfirm rofi
 sudo pacman -S --needed --noconfirm plocate
+
+#########################################################
+# NOTE: alacritty has problems running without gpu so   #
+# let's install an alternative terminal just in case... #
+#########################################################
+
+sudo pacman -S --needed --noconfirm termite
 
 # Install yay pkgs
 
@@ -158,6 +168,4 @@ find . -iname '*.jpg' -exec cp {} "$HOME/Wallpapers" \;
 
 systemctl enable sddm
 systemctl start sddm
-
-systemctl enable --user pipewire wireplumber pipewire-pulse
 systemctl start --user pipewire wireplumber pipewire-pulse
