@@ -92,6 +92,9 @@ makepkg -si --noconfirm
 # Installing system #
 #####################
 
+# Get expect
+sudo pacman -S --needed --noconfirm expect
+
 # Grab all the packages needed for graphics
 sudo pacman -S --needed --noconfirm xorg 
 sudo pacman -S --needed --noconfirm sddm
@@ -124,13 +127,14 @@ sudo pacman -S --needed --noconfirm dunst
 sudo pacman -S --needed --noconfirm polkit-kde-agent
 sudo pacman -S --needed --noconfirm rofi
 sudo pacman -S --needed --noconfirm plocate
+sudo pacman -S --needed --noconfirm ranger
 
 #########################################################
 # NOTE: alacritty has problems running without gpu so   #
 # let's install an alternative terminal just in case... #
 #########################################################
 
-sudo pacman -S --needed --noconfirm termite
+yay -S --needed --noconfirm termite
 
 # Install yay pkgs
 
@@ -163,10 +167,15 @@ sudo cp dotfiles/ftc.fish /usr/share/doc/find-the-command
 mkdir "$HOME/Wallpapers"
 find . -iname '*.jpg' -exec cp {} "$HOME/Wallpapers" \;
 
+# Let's do a chsh to try to change to the fish shell
+echo "Changing shell to fish"
+echo "$passwd" | chsh -s /usr/bin/fish
+
 ##################
 # Start services #
 ##################
 
-systemctl enable sddm
-systemctl start sddm
+echo "Enabling Services"
+echo "$passwd" | systemctl enable sddm
+echo "$passwd" | systemctl start sddm
 systemctl start --user pipewire wireplumber pipewire-pulse
