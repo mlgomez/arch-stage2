@@ -50,9 +50,22 @@ mkdir "$HOME/Videos"
 # Before running package management, update system
 echo "$passwd" | sudo pacman -Syu --noconfirm
 
-# Let's install an AUR helper... Switch to home directory always when doing this!!
+#########################
+# Installing AUR Helper #
+#########################
 
 cd "$HOME" || exit 1
+
+# Check if yay pkg exists from probable previous failed installation
+# If it exists, remove it
+
+if [[ -d "yay" ]]; then
+	echo "Found yay directory already. Removing before installiation attempt."
+	rm -rf "yay"
+fi
+
+# Download and install yay
+
 git clone http://aur.archlinux.org/yay.git
 cd "yay" || exit 1
 mkpkg -si --noconfirm
@@ -60,6 +73,10 @@ mkpkg -si --noconfirm
 # NOTE: When using yay, attempt to pass --noconfirm just like with pacman
 # This might help the installation process go along more smoothly.
 # Echo $passwd as well so it can skip sudo
+
+#####################
+# Installing system #
+#####################
 
 # Grab all the packages needed for graphics
 echo "$passwd" | sudo pacman -S --needed xorg lightdm
@@ -72,7 +89,11 @@ picom spectacle dunst polkit-kde-agend xorg-xrandr rofi plocate
 
 # Install yay pkgs
 
-echo "$passwd" | yay -S --needed --noconfirm polybar find-the-command \
+echo "$passwd" | yay -S --needed --noconfirm polybar find-the-command exa
+
+######################
+# Configuring system #
+######################
 
 
 # In case .config does not exist.....
@@ -92,6 +113,8 @@ echo "$passwd" | sudo cp dotfiles/ftc.fish /usr/share/doc/find-the-command
 mkdir "$HOME/Wallpapers"
 find . -iname '*.jpg' -exec cp {} "$HOME/Wallpapers" \;
 
-# Start services
+##################
+# Start services #
+##################
 
 sudo systemctl start lightdm
