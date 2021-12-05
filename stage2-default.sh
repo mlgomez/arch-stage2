@@ -99,7 +99,7 @@ systemctl enable sddm
 # Install i3-gaps and some other tools then copy configs
 sudo pacman -S --needed i3-gaps feh \
 fish fzf bat starship alacritty easyeffects neofetch \
-picom spectacle dunst polkit-kde-agend xorg-xrandr rofi plocate
+picom spectacle dunst polkit-kde-agent rofi plocate
 
 # Install yay pkgs
 
