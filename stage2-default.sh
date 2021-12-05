@@ -113,7 +113,7 @@ systemctl enable --user pipewire wireplumber pipewire-pulse
 sudo pacman -S --needed --noconfirm i3-gaps
 sudo pacman -S --needed --noconfirm feh
 sudo pacman -S --needed --noconfirm nano
-sudo pacman -S --needed --noconfirm vim
+sudo pacman -S --needed --noconfirm vim-clipboard
 sudo pacman -S --needed --noconfirm kate
 sudo pacman -S --needed --noconfirm fish
 sudo pacman -S --needed --noconfirm fzf
