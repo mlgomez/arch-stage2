@@ -93,17 +93,36 @@ makepkg -si --noconfirm
 #####################
 
 # Grab all the packages needed for graphics
-sudo pacman -S --needed xorg sddm
+sudo pacman -S --needed --noconfirm xorg 
+sudo pacman -S --needed --noconfirm sddm
 systemctl enable sddm
 
 # Install i3-gaps and some other tools then copy configs
-sudo pacman -S --needed i3-gaps feh \
-fish fzf bat starship alacritty easyeffects neofetch \
-picom spectacle dunst polkit-kde-agent rofi plocate
+# I like kate even if it's not super efficient. Sue me.
+sudo pacman -S --needed --noconfirm i3-gaps
+sudo pacman -S --needed --noconfirm feh
+sudo pacman -S --needed --noconfirm nano
+sudo pacman -S --needed --noconfirm vim
+sudo pacman -S --needed --noconfirm kate
+sudo pacman -S --needed --noconfirm fish
+sudo pacman -S --needed --noconfirm fzf
+sudo pacman -S --needed --noconfirm bat
+sudo pacman -S --needed --noconfirm starship
+sudo pacman -S --needed --noconfirm alacritty
+sudo pacman -S --needed --noconfirm easyeffects
+sudo pacman -S --needed --noconfirm neofetch
+sudo pacman -S --needed --noconfirm picom
+sudo pacman -S --needed --noconfirm spectacle
+sudo pacman -S --needed --noconfirm dunst
+sudo pacman -S --needed --noconfirm polkit-kde-agent
+sudo pacman -S --needed --noconfirm rofi
+sudo pacman -S --needed --noconfirm plocate
 
 # Install yay pkgs
 
-yay -S --needed polybar find-the-command exa
+yay -S --needed --noconfirm polybar
+yay -S --needed --noconfirm find-the-command
+yay -S --needed --noconfirm exa
 
 ######################
 # Configuring system #
