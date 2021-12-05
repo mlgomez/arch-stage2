@@ -33,23 +33,23 @@ workingdir=$PWD
 
 # Create typical subdirectories for home dir if they don't exist
 
-if [[ !-d "$HOME/Downloads" ]]; then
+if [[ ! -d "$HOME/Downloads" ]]; then
 	mkdir "$HOME/Downloads"
 fi
 
-if [[ !-d "$HOME/Documents" ]]; then
+if [[ ! -d "$HOME/Documents" ]]; then
 	mkdir "$HOME/Documents"
 fi
 
-if [[ !-d "$HOME/Music" ]]; then
+if [[ ! -d "$HOME/Music" ]]; then
 	mkdir "$HOME/Music"
 fi
 
-if [[ !-d "$HOME/Pictures" ]]; then
+if [[ ! -d "$HOME/Pictures" ]]; then
 	mkdir "$HOME/Pictures"
 fi
 
-if [[ !-d "$HOME/Videos" ]]; then
+if [[ ! -d "$HOME/Videos" ]]; then
 	mkdir "$HOME/Videos"
 fi
 
@@ -103,7 +103,9 @@ yay -S --needed --noconfirm polybar find-the-command exa
 
 
 # In case .config does not exist.....
-mkdir "$HOME/.config"
+if [[ ! -d "$HOME/.config" ]]; then
+	mkdir "$HOME/.config"
+fi
 
 cd "$workingdir" || exit 1
 cp -r dotfiles/alacritty "$HOME/.config"
