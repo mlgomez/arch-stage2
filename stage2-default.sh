@@ -74,7 +74,7 @@ fi
 
 git clone http://aur.archlinux.org/yay.git
 cd "yay" || exit 1
-mkpkg -si --noconfirm
+makepkg -si --noconfirm
 
 # NOTE: When using yay, attempt to pass --noconfirm just like with pacman
 # This might help the installation process go along more smoothly.
