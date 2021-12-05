@@ -160,11 +160,13 @@ cp -r dotfiles/fish "$HOME/.config"
 cp -r dotfiles/i3 "$HOME/.config"
 cp -r dotfiles/picom "$HOME/.config"
 cp -r dotfiles/polybar "$HOME/.config"
+cp -r dotfiles/termite "$HOME/.config"
 cp dotfiles/starship.toml "$HOME/.config"
 sudo cp dotfiles/ftc.fish /usr/share/doc/find-the-command
 
 # Copy wallpapers and create wallpapers folder
 mkdir "$HOME/Wallpapers"
+cd "$workingdir/assets"
 find . -iname '*.jpg' -exec cp {} "$HOME/Wallpapers" \;
 
 # Let's do a chsh to try to change to the fish shell
@@ -176,6 +178,6 @@ echo "$passwd" | chsh -s /usr/bin/fish
 ##################
 
 echo "Enabling Services"
-echo "$passwd" | systemctl enable sddm
-echo "$passwd" | systemctl start sddm
+systemctl enable sddm
+systemctl start sddm
 systemctl start --user pipewire wireplumber pipewire-pulse
