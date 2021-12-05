@@ -113,7 +113,6 @@ systemctl enable --user pipewire wireplumber pipewire-pulse
 sudo pacman -S --needed --noconfirm i3-gaps
 sudo pacman -S --needed --noconfirm feh
 sudo pacman -S --needed --noconfirm nano
-sudo pacman -S --needed --noconfirm vim-clipboard
 sudo pacman -S --needed --noconfirm kate
 sudo pacman -S --needed --noconfirm fish
 sudo pacman -S --needed --noconfirm fzf
@@ -138,6 +137,7 @@ yay -S --needed --noconfirm termite
 
 # Install yay pkgs
 
+yay -S --needed --noconfirm vim-clipboard
 yay -S --needed --noconfirm polybar
 yay -S --needed --noconfirm find-the-command
 yay -S --needed --noconfirm exa
