@@ -95,7 +95,11 @@ makepkg -si --noconfirm
 # Grab all the packages needed for graphics
 sudo pacman -S --needed --noconfirm xorg 
 sudo pacman -S --needed --noconfirm sddm
-systemctl enable sddm
+
+# Grab what we need for audio in case we don't have it
+sudo pacman -S --needed --noconfirm pipewire
+sudo pacman -S --needed --noconfirm wireplumber
+sudo pacman -S --needed --noconfirm pipewire-pulse
 
 # Install i3-gaps and some other tools then copy configs
 # I like kate even if it's not super efficient. Sue me.
@@ -152,4 +156,8 @@ find . -iname '*.jpg' -exec cp {} "$HOME/Wallpapers" \;
 # Start services #
 ##################
 
+systemctl enable sddm
 systemctl start sddm
+
+systemctl enable --user pipewire wireplumber pipewire-pulse
+systemctl start --user pipewire wireplumber pipewire-pulse
