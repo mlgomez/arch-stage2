@@ -1,4 +1,4 @@
-##!/bin/bash
+#!/bin/bash
 
 #####################################################################
 # This is a personal installation script for stage 2 of archinstall #
@@ -35,7 +35,7 @@ workingdir=$PWD
 echo "Please enter your user password to continue installation. Type 'fuckoff' to cancel."
 read $passwd
 
-if [[ $passwd "fuckoff" ]]; then
+if [[ $passwd == "fuckoff" ]]; then
 	exit 1
 fi
 
@@ -89,7 +89,6 @@ cp dotfiles/starship.toml $HOME/.config
 echo $passwd | sudo cp dotfiles/ftc.fish /usr/share/doc/find-the-command
 
 # Copy wallpapers and create wallpapers folder
-
 mkdir $HOME/Wallpapers
 find -iname '*.jpg' -exec cp {} $HOME/Wallpapers \;
 
