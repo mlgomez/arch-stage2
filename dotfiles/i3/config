@@ -41,14 +41,12 @@ exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 exec openrgb --profile MyProfile
 
 # Some more autostart stuff
-exec easyeffects --gapplication-service
-exec /usr/bin/steam-runtime -silent
-exec discord --start-minimized
-exec slack -u
+# Use this section to automatically start applications
+# Example: exec slack -u
 
 #Start the compositor
 exec --no-startup-id xsettingsd &
-exec picom --experimental-backends -b
+exec picom --experimental-backends --backend glx --xrender-sync-fence
 
 # Set the background
 exec feh --bg-fill ~/Wallpapers/arch-vaporwave.jpg
