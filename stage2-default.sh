@@ -147,7 +147,7 @@ yay -S --needed --noconfirm exa
 yay -S --needed --noconfirm nerd-fonts-fantasque-sans-mono
 
 # Picom-git needed because of --experimental-backends flag for blur.
-yay -S --needed --noconfirm picom-rounded-corners
+yay -S --needed --noconfirm picom-git
 
 ######################
 # Configuring system #
