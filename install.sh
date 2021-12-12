@@ -32,10 +32,10 @@ echo "Welome to the Stage 2 installer for Arch Linux! This script will install a
 window manager and several other accompanying tools to partially automate the \
 post-installation setup of Arch Linux on machines."
 echo "Your password will be needed to change your shell later along with a few other things"
-echo "Type your password to continue installation. Type 'fuckoff' to cancel:"
+echo "Type your password to continue installation. Type 'goaway' to cancel:"
 read -r passwd
 
-if [[ "$passwd" == "fuckoff" ]]; then
+if [[ "$passwd" == "goaway" ]]; then
 	exit 0
 fi
 
