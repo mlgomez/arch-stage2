@@ -49,3 +49,8 @@ Now just run the script:
 > ./stage2-default.sh
 
 Enjoy!
+
+# Credit
+
+- Shell configuration with Starship and other tools like fzf and bat were inspired largely by the work the Garuda team put in.
+- If you manage a project or know someone else I may have gotten dotfiles/inspiration from that I forgot about, feel free to post that ***politely*** in the Issues section and I'll mention them at my earliest convenience!

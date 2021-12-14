@@ -1,0 +1,112 @@
+;vim:ft=dosini
+
+[config]
+
+# If you have a high-DPI screen, set dpi = 192 or whatever DPI value applies
+
+# Picking a monitor, any monitor
+monitor = ${env:MONITOR:}
+
+# Setting the bar position
+width = 100%
+height = 3%
+offset-x = 0
+offset-y = 0
+radius = 0.0
+
+fixed-center = true
+override-redirect = false
+wm-restack = bspwm
+
+# module list:
+# alsa: Display current volume
+# backlight: Display screen brightness
+# date: Display date
+# notify: Notify icon, can customize its binding
+# network-short: Network connect icon, can customize its binding
+# battery: Battery info
+# keyboard: CapsLock indicator
+# mpd: mpd status and controls
+# i3: i3 workspace icons
+# bspwm: bspwm workspace icons
+# workspace-name: i3 current workspace name, need to be in the format like "1:Home"
+# title: title of the active window
+# network-detail: Download and upload speed
+# weather: Display openweather info
+# powermenu: menu to control system power
+# info-hackspeed: Numper of characters clicked per minute
+# daily-poem: Display poem
+# temperature: Display internal temperature
+# memory: Display memory usage
+# cpu: Display cpu usage
+# show-desktop: Display desktop (i3 only)
+# clash-widget: showing clash service
+# onedrive-widget: showing onedrive service
+# clipmenu-widget: showing clipmenu service
+
+# Top bar modules
+top-left = rofi-run bspwm title
+top-center = mpd
+# Put "weather" module where you want if you want it
+# I still need to fix something in it.
+# weather
+top-right = keyboard clipmenu-widget alsa pulseaudio network-short battery date powermenu
+
+systray-top = right
+
+# Set a global style
+
+line-size = 6
+
+# Modules configure option
+# the default value in this section should work in most cases,
+# if some of them doesn't suit your environment, you can change
+# it from here.
+# network interface, check by `ip link show`
+interface = enp34s0
+
+# Determine at what level the battery is full (0 - 100)
+battery-full-at = 95
+
+# Battery and adapter
+battery-bat = BAT0
+battery-adp = AC
+
+# Set default sound card settings
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+master-mixer = Master
+
+# MPD service connection
+mpd-host = 127.0.0.1
+mpd-port = 6600
+
+thermal-zone = 3
+# Temperature where we start (Celsius)
+base-temperature = 20
+# Temperature to show the warning
+warn-temperature = 70
+
+
+
+# GitHub personal token, generate from https://github.com/settings/tokens/new?scopes=notifications&description=Notifier+for+Polybar
+# where select at least `notifications` option
+github-token = 00ed987a6d7efd532c5b4ca0849c2803228d1b5d
+
+
+# notify module setting
+notify-click-left = xdotool key control+grave
+
+# network module setting
+network-click-left = i3-msg workspace 2
+
+
+# i3
+# Only show workspaces defined on the same output as the bar
+#
+# Useful if you want to show monitor specific workspaces
+# on different bars
+#
+# Default: false
+i3-pin-workspaces = false

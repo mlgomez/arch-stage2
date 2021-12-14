@@ -130,6 +130,8 @@ sudo pacman -S --needed --noconfirm polkit-kde-agent
 sudo pacman -S --needed --noconfirm rofi
 sudo pacman -S --needed --noconfirm plocate
 sudo pacman -S --needed --noconfirm ranger
+sudo pacman -S --needed --noconfirm ttf-font-awesome
+sudo pacman -S --needed --noconfirm libmpdclient
 
 #########################################################
 # NOTE: alacritty has problems running without gpu so   #
@@ -145,6 +147,7 @@ yay -S --needed --noconfirm polybar
 yay -S --needed --noconfirm find-the-command
 yay -S --needed --noconfirm exa
 yay -S --needed --noconfirm nerd-fonts-fantasque-sans-mono
+yay -S --needed --noconfirm ttf-weather-icons
 
 # Picom-git needed because of --experimental-backends flag for blur.
 yay -S --needed --noconfirm picom-git

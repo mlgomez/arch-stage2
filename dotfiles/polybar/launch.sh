@@ -1,27 +1,9 @@
-#!/usr/bin/bash
-
-##############
-# OLD SCRIPT #
-##############
-
-#Terminate already running bar instances
-#killall -q polybar
-
-# launch polybar
-#echo "---" | tee -a /tmp/toppolybar.log
-#polybar example >> /tmp/toppolybar.log
-
-
-##############
-# NEW SCRIPT #
-##############
-
 killall -q polybar
 
 if type "xrandr"; then
 	for display in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-		MONITOR=$display polybar --reload example &
+		MONITOR=$display polybar --reload -c $HOME/.config/polybar/dark-config nord-top &
 	done
 else
-	polybar --reload example &
+	polybar --reload -c $HOME/.config/polybar/dark-config nord-top &
 fi
