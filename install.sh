@@ -134,6 +134,7 @@ sudo pacman -S --needed --noconfirm ttf-font-awesome
 sudo pacman -S --needed --noconfirm libmpdclient
 sudo pacman -S --needed --noconfirm jq
 sudo pacman -S --needed --noconfirm ttf-dejavu
+sudo pacman -S --needed --noconfirm pkgfile
 
 #########################################################
 # NOTE: alacritty has problems running without gpu so   #

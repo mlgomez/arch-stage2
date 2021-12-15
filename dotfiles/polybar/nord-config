@@ -34,23 +34,17 @@ wm-restack = bspwm
 # network-detail: Download and upload speed
 # weather: Display openweather info
 # powermenu: menu to control system power
-# info-hackspeed: Numper of characters clicked per minute
-# daily-poem: Display poem
-# temperature: Display internal temperature
 # memory: Display memory usage
 # cpu: Display cpu usage
 # show-desktop: Display desktop (i3 only)
-# clash-widget: showing clash service
-# onedrive-widget: showing onedrive service
-# clipmenu-widget: showing clipmenu service
 
 # Top bar modules
 top-left = rofi-run i3 title
-top-center = weather
+top-center = weather 
 # Put "weather" module where you want if you want it
 # I still need to fix something in it.
 # weather
-top-right = keyboard clipmenu-widget alsa pulseaudio network-short battery date powermenu
+top-right = keyboard alsa pulseaudio network-short battery date powermenu
 
 systray-top = right
 
