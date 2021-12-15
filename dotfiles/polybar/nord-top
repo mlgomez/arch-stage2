@@ -164,7 +164,7 @@ bufferlist-0 = num lock
 bufferlist-1 = scroll lock
 
 ; Format
-format = <label-indicator>
+format = <label-indicator> <label-layout>
 
 label-indicator-on-capslock =  CL
 label-indicator-on-capslock-foreground = ${colors.warning}
@@ -172,6 +172,9 @@ label-indicator-on-capslock-underline = ${colors.warning}
 
 ; Icons
 layout-icon-default = 
+label-layout = %layout%
+label-layout-foreground = ${colors.warning}
+label-layout-underline = ${colors.warning}
 
 [module/pulseaudio]
 type = internal/pulseaudio
