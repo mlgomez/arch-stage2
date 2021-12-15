@@ -132,6 +132,7 @@ sudo pacman -S --needed --noconfirm plocate
 sudo pacman -S --needed --noconfirm ranger
 sudo pacman -S --needed --noconfirm ttf-font-awesome
 sudo pacman -S --needed --noconfirm libmpdclient
+sudo pacman -S --needed --noconfirm jq
 
 #########################################################
 # NOTE: alacritty has problems running without gpu so   #
