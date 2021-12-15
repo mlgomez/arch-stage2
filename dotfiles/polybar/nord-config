@@ -45,8 +45,8 @@ wm-restack = bspwm
 # clipmenu-widget: showing clipmenu service
 
 # Top bar modules
-top-left = rofi-run bspwm title
-top-center = mpd
+top-left = rofi-run i3 title
+top-center = weather
 # Put "weather" module where you want if you want it
 # I still need to fix something in it.
 # weather

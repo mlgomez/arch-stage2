@@ -29,16 +29,16 @@ ws-icon-5 = 25:Desktop;
 ws-icon-default = 
 
 ; color
-label-focused = 
+label-focused =  %index%
 label-focused-underline = ${colors.nord7}
 label-focused-foreground = ${colors.nord7}
 label-focused-padding = 2
 
-label-unfocused = •
+label-unfocused = • %index%
 label-unfocused-foreground = ${colors.nord9}
 label-unfocused-padding = 2
 
-label-urgent = 
+label-urgent =  %index%
 label-urgent-foreground = ${colors.urgent}
 label-urgent-background = ${colors.foreground}
 label-urgent-padding = 2
@@ -62,21 +62,21 @@ ws-icon-8 = ;
 ws-icon-9 = ;
 
 
-label-focused = %icon%
+label-focused = %icon% %index%
 label-focused-underline = ${colors.nord7}
 label-focused-foreground = ${colors.nord7}
 label-focused-padding = 2
 
-label-occupied = %icon%
+label-occupied = %icon% %index%
 label-occupied-underline = ${colors.nord9}
 label-occupied-foreground = ${colors.nord9}
 label-occupied-padding = 2
 
-label-empty = %icon%
+label-empty = %icon% %index%
 label-empty-foreground = ${colors.buffer}
 label-empty-padding = 2
 
-label-urgent = 
+label-urgent =  %index%
 label-urgent-foreground = ${colors.urgent}
 label-urgent-background = ${colors.foreground}
 label-urgent-padding = 2
@@ -96,7 +96,7 @@ label-focused-padding = 2
 label-focused-foreground = ${colors.nord7}
 label-focused-underline = ${colors.nord7}
 
-label-unfocused = 
+label-unfocused = %name%
 
 label-urgent = %name%
 label-urgent-foreground = ${colors.urgent}
@@ -460,8 +460,8 @@ tail = true
 
 [module/weather]
 type = custom/script
+label-font = 4
 exec = ~/.config/polybar/scripts/openweathermap-fullfeatured.sh
 interval = 600
 
-label-font = 4
 

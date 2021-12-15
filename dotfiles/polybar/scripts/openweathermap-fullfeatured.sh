@@ -21,7 +21,7 @@ get_icon() {
         *) icon="";
     esac
 
-    echo $icon
+    echo "$icon"
 }
 
 get_duration() {
@@ -92,5 +92,7 @@ if [ -n "$current" ] && [ -n "$forecast" ]; then
         daytime=" $(get_duration "$((sun_rise-now))")"
     fi
 
-    echo "$CITY $(get_icon "$current_icon") $current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon") $forecast_temp$SYMBOL"
+    # Until I fix this mess, I'm commenting this out and putting in something simpler:
+    # echo "$CITY $(get_icon "$current_icon") $current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon") $forecast_temp$SYMBOL"
+    echo " $CITY   ☁ : $current_temp$SYMBOL  ➡ : $forecast_temp$SYMBOL"
 fi
