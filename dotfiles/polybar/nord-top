@@ -370,7 +370,7 @@ ramp-4-foreground = ${colors.warning}
 
 [module/weather]
 type = custom/script
-label-font = 4
+label-font = 5
 exec = ~/.config/polybar/scripts/openweathermap-fullfeatured.sh
 interval = 600
 

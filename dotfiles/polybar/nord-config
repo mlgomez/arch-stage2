@@ -72,10 +72,6 @@ speaker-soundcard = default
 headphone-soundcard = default
 master-mixer = Master
 
-# MPD service connection
-mpd-host = 127.0.0.1
-mpd-port = 6600
-
 thermal-zone = 3
 # Temperature where we start (Celsius)
 base-temperature = 20
