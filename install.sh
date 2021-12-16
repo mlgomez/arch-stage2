@@ -152,6 +152,7 @@ yay -S --needed --noconfirm exa
 yay -S --needed --noconfirm nerd-fonts-fantasque-sans-mono
 yay -S --needed --noconfirm ttf-weather-icons
 yay -S --needed --noconfirm networkmanager-dmenu-git
+yay -S --needed --noconfirm cava
 
 # Picom-git needed because of --experimental-backends flag for blur.
 yay -S --needed --noconfirm picom-git
@@ -174,6 +175,7 @@ cp -r dotfiles/i3 "$HOME/.config"
 cp -r dotfiles/picom "$HOME/.config"
 cp -r dotfiles/polybar "$HOME/.config"
 cp -r dotfiles/termite "$HOME/.config"
+cp -r dotfiles/cava "$HOME/.config"
 cp dotfiles/starship.toml "$HOME/.config"
 sudo cp dotfiles/ftc.fish /usr/share/doc/find-the-command
 
