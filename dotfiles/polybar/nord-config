@@ -40,11 +40,11 @@ wm-restack = bspwm
 
 # Top bar modules
 top-left = rofi-run i3 title
-top-center = weather 
+top-center = weather
 # Put "weather" module where you want if you want it
 # I still need to fix something in it.
 # weather
-top-right = keyboard alsa pulseaudio eth wlan battery date powermenu
+top-right = keyboard cpu memory alsa pulseaudio eth wlan battery date powermenu
 
 systray-top = right
 
@@ -85,11 +85,6 @@ warn-temperature = 70
 github-token = 00ed987a6d7efd532c5b4ca0849c2803228d1b5d
 
 
-# notify module setting
-notify-click-left = xdotool key control+grave
-
-# network module setting
-network-click-left = i3-msg workspace 2
 
 
 # i3

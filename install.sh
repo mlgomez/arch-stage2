@@ -146,11 +146,12 @@ yay -S --needed --noconfirm termite
 # Install yay pkgs
 
 yay -S --needed --noconfirm vim-clipboard
-yay -S --needed --noconfirm polybar
+yay -S --needed --noconfirm polybar-git
 yay -S --needed --noconfirm find-the-command
 yay -S --needed --noconfirm exa
 yay -S --needed --noconfirm nerd-fonts-fantasque-sans-mono
 yay -S --needed --noconfirm ttf-weather-icons
+yay -S --needed --noconfirm networkmanager-dmenu-git
 
 # Picom-git needed because of --experimental-backends flag for blur.
 yay -S --needed --noconfirm picom-git

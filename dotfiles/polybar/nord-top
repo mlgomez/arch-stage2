@@ -159,9 +159,8 @@ label-full-underline = ${colors.success}
 [module/keyboard]
 type = internal/xkeyboard
 
-; List of indicators to ignore
-bufferlist-0 = num lock
-bufferlist-1 = scroll lock
+blacklist-0 = num lock
+blacklist-1 = scroll lock
 
 ; Format
 format = <label-indicator> <label-layout>
@@ -172,7 +171,7 @@ label-indicator-on-capslock-underline = ${colors.warning}
 
 ; Icons
 layout-icon-default = 
-label-layout = %layout%
+label-layout =  %layout%
 label-layout-foreground = ${colors.warning}
 label-layout-underline = ${colors.warning}
 
@@ -205,15 +204,6 @@ ramp-headphones-0 = 
 ramp-volume-foreground = ${colors.nord7}
 
 
-[module/notify]
-type = custom/text
-content = 
-content-foreground = ${colors.warning}
-content-underline = ${colors.warning}
-content-padding = 1
-
-click-left = ${config.notify-click-left}
-
 [network-base]
 type = internal/network
 #interface = ${config.interface}
@@ -228,11 +218,11 @@ interface-type = wired
 format-connected = %{A1:networkmanager_dmenu:}<label-connected>%{A}
 format-disconnected = %{A1:networkmanager_dmenu:}<label-disconnected>%{A}
 
-label-disconnected = 
+label-disconnected =  Net
 label-disconnected-foreground = ${colors.urgent}
 label-disconnected-underline = ${colors.urgent}
 
-label-connected = 
+label-connected =  Net
 label-connected-foreground = ${colors.success}
 label-connected-underline = ${colors.success}
 
@@ -243,8 +233,9 @@ interface-type = wireless
 format-connected = %{A1:networkmanager_dmenu:}<ramp-signal>%{A}
 format-disconnected = %{A1:networkmanager_dmenu:}<label-disconnected>%{A}
 
-label-disconnected = 
+label-disconnected =  Wlan
 label-disconnected-foreground = ${colors.urgent}
+label-disconnected-underline = ${colors.urgent}
 
 ramp-signal-0 = 
 ramp-signal-1 = 
@@ -290,7 +281,7 @@ label-close-padding = 4
 menu-0-0 = 
 menu-0-0-foreground = ${colors.urgent}
 menu-0-0-padding = 2
-menu-0-0-exec = shutdown
+menu-0-0-exec = shutdown now
 menu-0-1 = 
 menu-0-1-foreground = ${colors.warning}
 menu-0-1-padding = 2
@@ -304,16 +295,10 @@ menu-0-2-exec = systemctl suspend
 type = internal/cpu
 interval = 1
 
-format = <ramp-load> <label>
+format =  <label>
 
-ramp-load-0 = 
-ramp-load-0-foreground = ${colors.success}
-
-ramp-load-1 = 
-ramp-load-1-foreground = ${colors.warning}
-
-ramp-load-2 = 
-ramp-load-2-foreground = ${colors.urgent}
+format-foreground = ${colors.success}
+format-underline = ${colors.success}
 
 [module/show-desktop]
 type = custom/text
@@ -326,18 +311,9 @@ click-left = i3-msg workspace 25:Desktop
 type = internal/memory
 interval = 3
 
-format = <ramp-used> <label>
-
-label = %gb_used%/%gb_total%
-
-ramp-used-0 = 
-ramp-used-0-foreground = ${colors.success}
-
-ramp-used-1 = 
-ramp-used-1-foreground = ${colors.warning}
-
-ramp-used-2 = 
-ramp-used-2-foreground = ${colors.urgent}
+format =  <label>
+format-foreground = ${colors.warning}
+format-underline = ${colors.warning}
 
 [module/temperature]
 type = internal/temperature

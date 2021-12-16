@@ -265,5 +265,6 @@ set $urgent-bg-color		#E53935
 # Use setxkbdmap to set the keyboard layout options
 # In this case, I use EN_US and Romanian Standard
 
-exec "setxkbmap -option 'grp:alt_shift_toggle' -layout us,ro -variant ,std"
+
+exec --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle' -layout us,ro -variant ,std"
 
