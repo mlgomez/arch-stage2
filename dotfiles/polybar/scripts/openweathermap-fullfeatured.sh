@@ -35,7 +35,7 @@ get_duration() {
 
 }
 
-KEY="62628c16e6247d2c1caf0cb398a3dffa"
+KEY="40b3aec7feb510211f0d9b47b1390cd9"
 CITY="Sibiu"
 UNITS="metric"
 SYMBOL="°"

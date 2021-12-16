@@ -214,11 +214,31 @@ content-padding = 1
 
 click-left = ${config.notify-click-left}
 
-[module/network-short]
+[network-base]
 type = internal/network
-interface = ${config.interface}
+#interface = ${config.interface}
 
 interval = 1
+
+[module/eth]
+inherit = network-base
+interface-type = wired
+
+
+format-connected = %{A1:networkmanager_dmenu:}<label-connected>%{A}
+format-disconnected = %{A1:networkmanager_dmenu:}<label-disconnected>%{A}
+
+label-disconnected = 
+label-disconnected-foreground = ${colors.urgent}
+label-disconnected-underline = ${colors.urgent}
+
+label-connected = 
+label-connected-foreground = ${colors.success}
+label-connected-underline = ${colors.success}
+
+[module/wlan]
+inherit = network-base
+interface-type = wireless
 
 format-connected = %{A1:networkmanager_dmenu:}<ramp-signal>%{A}
 format-disconnected = %{A1:networkmanager_dmenu:}<label-disconnected>%{A}
@@ -242,15 +262,6 @@ ramp-signal-2-underline = ${colors.nord7}
 
 ramp-signal-3-foreground = ${colors.success}
 ramp-signal-3-underline = ${colors.success}
-
-[module/clipmenu-widget]
-type = custom/script
-
-exec = ~/.config/polybar/scripts/clipmenu.sh
-interval = 0
-
-click-left = ~/.config/polybar/scripts/clipmenu.sh menu
-click-right = ~/.config/polybar/scripts/clipmenu.sh toggle
 
 [module/rofi-run]
 type = custom/text
@@ -327,17 +338,6 @@ ramp-used-1-foreground = ${colors.warning}
 
 ramp-used-2 = 
 ramp-used-2-foreground = ${colors.urgent}
-
-[module/network-detail]
-type = internal/network
-interface = ${config.interface}
-
-interval = 3
-
-format-connected = <label-connected>
-
-label-connected =  %downspeed:9%   %upspeed:9%
-label-connected-foreground = ${colors.success}
 
 [module/temperature]
 type = internal/temperature

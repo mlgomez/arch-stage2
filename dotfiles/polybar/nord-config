@@ -44,7 +44,7 @@ top-center = weather
 # Put "weather" module where you want if you want it
 # I still need to fix something in it.
 # weather
-top-right = keyboard alsa pulseaudio network-short battery date powermenu
+top-right = keyboard alsa pulseaudio eth wlan battery date powermenu
 
 systray-top = right
 
@@ -57,7 +57,7 @@ line-size = 6
 # if some of them doesn't suit your environment, you can change
 # it from here.
 # network interface, check by `ip link show`
-interface = enp34s0
+# interface = enp34s0
 
 # Determine at what level the battery is full (0 - 100)
 battery-full-at = 95
