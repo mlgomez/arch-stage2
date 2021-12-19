@@ -85,6 +85,7 @@ sudo pacman -S --needed --noconfirm git
 
 # Can't believe base package doesn't include this
 sudo pacman -S --needed --noconfirm acpi
+sudo pacman -S --needed --noconfirm htop
 
 # Grab all the packages needed for graphics
 sudo pacman -S --needed --noconfirm xorg
@@ -213,7 +214,7 @@ yay -S --needed --noconfirm ttf-weather-icons
 # Network management utility
 yay -S --needed --noconfirm networkmanager-dmenu-git
 
-# Audio spectrum display for terminal; pretty cool graphics.
+# Audio spectrum viewer for terminal; pretty cool graphics.
 yay -S --needed --noconfirm cava
 
 # Picom-git needed because of --experimental-backends flag for blur.
@@ -240,17 +241,19 @@ cp -r dotfiles/termite "$HOME/.config"
 cp -r dotfiles/cava "$HOME/.config"
 cp -r dotfiles/qt5ct "$HOME/.config"
 cp -r dotfiles/gtk-3.0 "$HOME/.config"
+cp -r dotfiles/rofi "$HOME/.config"
+cp -r dotfiles/dunst "$HOME/.config"
 cp -r dotfiles/.icons "$HOME"
 cp dotfiles/starship.toml "$HOME/.config"
 sudo cp dotfiles/ftc.fish /usr/share/doc/find-the-command
 
 # Ask user if using touchpad
-echo "Are you using a touchpad? y/n"
+echo -e "\n\nAre you using a touchpad? (y/n):"
 read -r touchpad
 
 # Kinda clear I have no goddamn clue how to properly write a bash script.
 if [ "$touchpad" == "y" ] || [ "$touchpad" == "Y" ] || [ "$touchpad" == "yes" ] || [ "$touchpad" == "Yes" ]; then
-    echo "Would you like to enable tap to click on your touchpad?"
+    echo -e "\n\nWould you like to enable tap to click on your touchpad? (y/n)"
     read -r yn
     if [ "$yn" == "y" ] || [ "$yn" == "Y" ] || [ "$yn" == "yes" ] || [ "$yn" == "Yes" ]; then
         sudo mkdir -p /etc/X11/xorg.conf.d

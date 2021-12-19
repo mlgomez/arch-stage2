@@ -4,27 +4,57 @@ This is my own personal "stage 2" install for Arch Linux.
 
 It contains i3-gaps window manager with my pre-configured dotfiles. It's nothing extraordinarily special, but it helps automate my process of installing Arch on new systems.
 
-If you like it, you're welcome to use it.
+It also has a unified theme applied to as many elements as possible. If you never riced Arch before, this will basically do it for you. Play around with the colors and enjoy.
 
 # What gets installed
 
-The script installs:
+## Essentials
 
-- A graphical environment (xorg)
-- A display manager for graphical login (sddm)
-- Pipewire (via wireplumber + pipewire-pulse services for best compatibility & performance)
+- A couple of useful monitoring utilities:
+    - acpi - Allows for management and monitoring of battery
+    - htop - CLI-based system monitor
+- xorg
+- xddm - A display manager for graphical login
+- Pipewire audio server (via wireplumber + pipewire-pulse services for best compatibility & performance)
 - i3-gaps (for those sweet, sweet gaps)
-- kate (because I like it. sue me...)
-- A custom shell based on Garuda Linux's config.fish
-- Alacritty terminal (termite as well, in case you have trouble with GLX and other errors)
-- A modern launcher (rofi)
-- A special file locator (plocate, aliased to "locate" for convenience")
-- A terminal file manager that does it all! (ranger)
-- Many more packages and perhaps other stuff in the future.
+- Thumbnailers (ffmpegthumbs & ffmpegthumbnailer)
+- feh - an image previewer that is also used to set wallpapers
+- Authentication applications (gnome-keyring & polkit-kde-agent)
+- dunst - A notification daemon
+- picom - X compositor that allows for visual effects like dual kawase blur and shadows
+- (optional) Tap-to-click functionality for touchpads. You'll get a prompt.
+
+## Appearance
+
+- qt5ct - Configuration utility for Qt applications
+- lxappearance - Configuration utility for GTK+ applications
+- Breeze - The KDE Breeze suite, for both Qt and GTK+, with icons
+- Font Awesome - Used for icons in the bar
+- DejaVu font - System font
+- Fantasque Sans Mono Nerd Font - Used in terminal
+- Weather Icons - For the weather module in the bar
+
+## Utilities
+
+- PCManFM - A graphical light-weight file manager
+- ranger - A lighter-weight file manager that runs on the terminal with vim-like commands
+- spectacle - KDE's screenshot utility, which can run CLI commands that are bound to keys
+    - Shift+PrtScn = Copy area to clipboard
+    - Ctrl+PrtScn = Opens spectacle after taking a shot
+- Kate text editor
+- Vim with system clipboard integration
+- Alacritty - A terminal
+    - In case you have problems running Alacritty, termite is also installed as an alternative
+- Brave browser - A browser based on Chromium that blocks ads by default among other things
+- cava - A pretty cool audio spectrum viewer
+
+## Shell
+
+This custom script installs and sets up the fish shell with fzf, bat, starship, neofetch, and find-the-command utilities integrated into the config.fish file, almost entirely inspired by Garuda Linux.
 
 # How to install
 
-After you've finished installing Arch, get out of chroot and boot into your newly installed system.
+After you've finished installing Arch, get out of chroot and reboot into your newly installed system.
 
 For best results, install only base packages + sudo and whatever else you need to get your installation complete and boot into a terminal.
 
