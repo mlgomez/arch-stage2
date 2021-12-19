@@ -64,19 +64,19 @@ After you're done and logged in, with your terminal in the home folder, install 
 
 Now it's time to clone this repository:
 
-> git clone https://github.com/mlgomez/arch-stage2-install
+> git clone https://github.com/mlgomez/arch-stage2
 
 Change directory to the new one:
 
-> cd arch-stage2-install
+> cd arch-stage2
 
 Make sure the script is executable:
 
-> chmod +x stage2-default.sh
+> chmod +x install.sh
 
 Now just run the script:
 
-> ./stage2-default.sh
+> ./install.sh
 
 Enjoy!
 
