@@ -47,6 +47,7 @@ It also has a unified theme applied to as many elements as possible. If you neve
     - In case you have problems running Alacritty, termite is also installed as an alternative
 - Brave browser - A browser based on Chromium that blocks ads by default among other things
 - cava - A pretty cool audio spectrum viewer
+- EasyEffects - Powerful audio post-processing utility; I recommend running Belisarius Perfect EQ + Normalization preset. I found it to work best on most sound systems while balancing the audio.
 
 ## Shell
 
@@ -83,5 +84,6 @@ Enjoy!
 # Credit
 
 - Shell configuration with Starship and other tools like fzf and bat were inspired largely by the work the Garuda team put in.
-- Polybar configuration inspired by Yucklys/polybar-nord-theme on GitHub
+- Polybar configuration inspired by https://github.com/Yucklys/polybar-nord-theme
+- EasyEffects presets were taken from https://github.com/JackHack96/PulseEffects-Presets; Belisarius Perfect EQ + Normalization preset drew inspiration from JackHack96's project.
 - If you manage a project or know someone else I may have gotten dotfiles/inspiration from that I forgot about, feel free to post that ***politely*** in the Issues section and I'll mention them at my earliest convenience!
