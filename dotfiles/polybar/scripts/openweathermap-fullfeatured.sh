@@ -1,5 +1,10 @@
 #!/bin/sh
 
+KEY=""
+CITY="Sibiu"
+UNITS="metric"
+SYMBOL="°"
+
 get_icon() {
     case $1 in
         01d) icon="";;
@@ -35,10 +40,6 @@ get_duration() {
 
 }
 
-KEY="40b3aec7feb510211f0d9b47b1390cd9"
-CITY="Sibiu"
-UNITS="metric"
-SYMBOL="°"
 
 API="https://api.openweathermap.org/data/2.5"
 
