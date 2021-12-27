@@ -93,6 +93,14 @@ function copy
     end
 end
 
+function convertdir
+	for i in *"$argv[1]"
+		set newfile (basename $i $argv[1])$argv[2]
+		echo $newfile
+		command ffmpeg -i $i $newfile
+	end
+end
+
 ## Useful aliases
 # Replace ls with exa
 alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing

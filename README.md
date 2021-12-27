@@ -14,7 +14,7 @@ It also has a unified theme applied to as many elements as possible. If you neve
     - acpi - Allows for management and monitoring of battery
     - htop - CLI-based system monitor
 - xorg
-- xddm - A display manager for graphical login
+- sddm - A display manager for graphical login
 - Pipewire audio server (via wireplumber + pipewire-pulse services for best compatibility & performance)
 - i3-gaps (for those sweet, sweet gaps)
 - Thumbnailers (ffmpegthumbs & ffmpegthumbnailer)
