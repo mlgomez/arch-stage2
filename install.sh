@@ -95,6 +95,7 @@ sudo pacman -S --needed --noconfirm sddm
 sudo pacman -S --needed --noconfirm pipewire
 sudo pacman -S --needed --noconfirm wireplumber
 sudo pacman -S --needed --noconfirm pipewire-pulse
+sudo pacman -S --needed --noconfirm pipewire-alsa
 
 # We may need to enable audio services before installing anything else
 systemctl enable --user pipewire wireplumber pipewire-pulse
