@@ -46,7 +46,7 @@ exec openrgb --profile MyProfile
 
 #Start the compositor
 exec --no-startup-id xsettingsd &
-exec picom --experimental-backends --backend glx --xrender-sync-fence
+exec picom --backend glx --xrender-sync-fence
 
 # Set the background
 exec feh --bg-fill ~/Wallpapers/arch-vaporwave.jpg
