@@ -255,6 +255,8 @@ set $urgent-bg-color		#E53935
 #	}
 #}
 
+focus_follows_mouse no
+
 ########################################################
 #                                                      #
 # NOTE!!!!!!!!! Please make sure that everything after #
