@@ -15,8 +15,8 @@ offset-y = 0
 radius = 0.0
 
 fixed-center = true
-override-redirect = false
-wm-restack = bspwm
+override-redirect = true
+wm-restack = i3
 
 # module list:
 # alsa: Display current volume

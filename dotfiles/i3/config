@@ -19,6 +19,7 @@ font pango:monospace 12
 for_window [class=".*"] border pixel 0
 gaps inner 30
 gaps outer 0
+gaps top 30
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
