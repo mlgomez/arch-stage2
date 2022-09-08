@@ -110,6 +110,8 @@ sudo pacman -S --needed --noconfirm feh
 sudo pacman -S --needed --noconfirm ffmpegthumbs
 sudo pacman -S --needed --noconfirm ffmpegthumbnailer
 
+# Native WebP support
+sudo pacman -S --needed --noconfirm webp-pixbuf-loader
 
 sudo pacman -S --needed --noconfirm nano
 
