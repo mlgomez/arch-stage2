@@ -101,7 +101,7 @@ sudo pacman -S --needed --noconfirm pipewire-alsa
 systemctl enable --user pipewire wireplumber pipewire-pulse
 
 # Install i3-gaps and some other tools
-sudo pacman -S --needed --noconfirm i3-gaps
+sudo pacman -S --needed --noconfirm i3-wm
 
 # Used for setting wallpaper and previewing images.
 sudo pacman -S --needed --noconfirm feh
@@ -211,7 +211,7 @@ yay -S --needed --noconfirm exa
 yay -S --needed --noconfirm brave-bin
 
 # Some fonts
-yay -S --needed --noconfirm nerd-fonts-fantasque-sans-mono
+yay -S --needed --noconfirm ttf-fantasque-nerd
 yay -S --needed --noconfirm ttf-weather-icons
 
 # Network management utility
