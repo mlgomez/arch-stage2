@@ -53,6 +53,10 @@ It also has a unified theme applied to as many elements as possible. If you neve
 
 This custom script installs and sets up the fish shell with fzf, bat, starship, neofetch, and find-the-command utilities integrated into the config.fish file, almost entirely inspired by Garuda Linux.
 
+# Notes
+
+- There's an example setxkbmap near the bottom of the i3 config ($HOME/.config/i3/config) that switches between the US and Romanian Standard keyboard layouts that I personally use. Comment it out if it bothers you, or modify it with your own layout options using the guideline provided in 'man xkeyboard-config'. The current toggle is the right Alt key FYI.
+
 # How to install
 
 After you've finished installing Arch, get out of chroot and reboot into your newly installed system.
