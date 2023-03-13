@@ -269,5 +269,5 @@ focus_follows_mouse no
 # In this case, I use EN_US and Romanian Standard
 
 
-exec --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle' -layout us,ro -variant ,std"
+exec --no-startup-id "setxkbmap -option 'grp:toggle' -layout us,ro -variant ,std"
 
